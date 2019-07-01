@@ -1,41 +1,103 @@
-# Basic git commands: `add` `commit`
+# Assignment: Gitting dojo
 
-This is an exercise to practice git basics.
+Welcome to Gitland! You were transferred here with your friend to improve your Git skills! It’s not an ordinary coding dojo. Here you have to cooperate with your partner to solve mysteries of Gitland.
 
-## Git initial Configuration
-1. `git config --global user.name "Your name"`
-2. `git config --global user.email "Your email"`
+This dojo has specific scenario, some task will be done in parallel some of them belongs to exact person. Initially you will work with our own laptop.
 
-> If you are so scared of Vim the sweat starts out of you:
-> `git config --global core.editor "notepad --wait"`
+Gitland is full of small creatures called gitties. They can be taught new things by reading Python functions uploaded to GitHub. List of things that gitties need to be taught:
 
-## The task
+* Introducing themselves - _def introduce()_
+* Add two numbers - _def add(a, b)_
+* Tell a joke - _def joke()_
+* Shout - _def shout()_
 
-1. Use `git status` to see which branch you are on.
-1. What does `git log` look like?
-1. Create a file
-1. What does the output from `git status` look like now?
-1. `add` the file to the staging area
-1. How does `git status` look now?
-1. `commit` the file to the repository
-1. How does `git status` look now?
-1. Change the content of the file you created earlier
-1. What does `git status` look like now?
-1. `add` the file change
-1. What does `git status` look like now?
-1. Change the file again
-1. Make a `commit`
-1. What does the `status` look like now? The `log`?
-1. Commit the newest change
+This time don't focus on the code too much. Gitties are wiser than python interpreter and are able to fix bugs by themselves. This exercise is aimed to teach you version control, not python.
 
-## Useful commands
-- `git add`
-- `git commit`
-- `git commit -m "My commit message"`
-- `git log`
-- `git log -n 5`
-- `git log --oneline`
-- `git log --oneline --graph`
-- `touch filename` to create a file (or `sc filename ''` in PowerShell)
-- `echo content > file` to overwrite file with content (or `sc filename 'content'` in PowerShell)
-- `echo content >> file` to append file with content (or `ac filename 'content'` in PowerShell)
+To help gitties follow steps below carefully.
+
+## Section 1 - repository initialization
+
+Decide which person will be a **Person A** and which will be a **Person B**.
+
+**Person A** has to create a new GitHub repository. Only person A does the steps below. Person B should only watch what A is doing.
+
+  1. Create a folder on your computer using terminal. cd into that folder.
+  2. [Initialize a git repository](https://git-scm.com/docs/git-init) inside that folder.
+  3. Create a _gittie.py_ file inside that folder. (touch gittie.py).
+  4. Add this file to git repository and commit it.
+  5. Open web browser. Log into GitHub and find a _New repository_ button. Click it!
+  6. Fill in repository name, make sure that _Initialize this repository with a README_ is NOT ticked, and then click _Create repository._
+  7. Now the new remote repo is created by Github and it shows some hints to start. Look for " _…or push an existing repository from the command line"._
+  section and paste those commands into terminal and press enter. What have those commands just done?
+  8. Refresh repository website on github. _gittie.py_ file should show up
+  9. Now we'll grant acces to this repository to person B. Go to _Settings_ and than to _Collaborators._
+  10. Find person B and click _Add collaborator._
+
+Now it's time for **Person B**:
+
+  1. Check your email. You should find a repository invitation. Accept it.
+  2. You should be redirected to the repository page. On this page find a _Clone or download_ button. Click it!
+  3. Copy the given url addres.
+  4. Open terminal. Type _git clone <copied address>_
+  5. What has just happened?
+
+### Section 2 - syncing changes
+
+Now both of you have a local copy of your repository. Now you'll learn to sync your changes.
+
+**Person B**:
+
+  1. Open _gittie.py_ in Atom or Visual Studio Code
+  2. Implement _introduce_ function, that'll print, "Hello, I'm Gittie!".
+  3. Check _git status_ and _git diff._
+  4. Add and commit your changes to git repository.
+  5. Push your changes to github. _git push origin master_
+
+**Person A**:
+
+  1. Pull changes from github. _git pull origin master._
+  2. Check what happened. _git log_
+  3. Open _gittie.py_ file.
+  4. Both of you should have identical files now.
+
+### Section 3 - auto merging
+
+Now it's time to work simultaneously.
+
+**Person A** has implement _add_ function and **person B** has to implement _joke_ function. After doing so, each of you has to add, commit and push your changes to github.
+
+Who pushed changes first? Was the second person able to push his/her changes successfully?
+
+Read the _git_ output carefully. You'll find instructions there how to push it.
+
+After both of you have pushed your changes successfully, use _git pull_ again. Check what happened (git log).
+
+### Section 4 - conflicts
+
+Now you'll work independently.
+
+Both of you have to modify _introduce_ function. Modify this function body so that it's different than your partners.
+
+Commit your changes. Try to sync your changes. What happened? Try to [resolve conflict manually](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/).
+
+At the end of this exercise you should have identical files on both computers and git log should give the same output.
+
+Now think for a while what happened during this exercise. Do you understand all the parts?
+
+### Section 5 - stashing & popping
+
+This time you'll try a common scenario - pulling before committing.
+
+Both of you have to implement _shout_ function. However, only **person B** has to add, commit and push it. **Person A** does not commit anything now.
+
+**Person A** has to try to pull **person's B** changes.
+
+Was the pull successful? What's git's output? What's [_git stash_](https://git-scm.com/docs/git-stash)?
+
+Try to stash your changes and pull again.
+
+Try to pop your changes from stash.
+
+Make your working directory clean.
+
+What happened during this section? Can you find any real life use case for git stash?
