@@ -62,42 +62,27 @@ Now both of you have a local copy of your repository. Now you'll learn to sync y
 
 ### Section 3 - auto merging
 
-Now it's time to work simultaneously.
-
-**Person A** has implement _add_ function and **person B** has to implement _joke_ function. After doing so, each of you has to add, commit and push your changes to github.
-
-Who pushed changes first? Was the second person able to push his/her changes successfully?
-
-Read the _git_ output carefully. You'll find instructions there how to push it.
-
-After both of you have pushed your changes successfully, use _git pull_ again. Check what happened (git log).
+1. Now it's time to work simultaneously.
+2. **Person A** has implement _add_ function and **person B** has to implement _joke_ function. After doing so, each of you has to add, commit and push your changes to github.
+3. Who pushed changes first? Was the second person able to push his/her changes successfully?
+4. Read the _git_ output carefully. You'll find instructions there how to push it.
+5. After both of you have pushed your changes successfully, use _git pull_ again. Check what happened (git log).
 
 ### Section 4 - conflicts
 
-Now you'll work independently.
-
-Both of you have to modify _introduce_ function. Modify this function body so that it's different than your partners.
-
-Commit your changes. Try to sync your changes. What happened? Try to [resolve conflict manually](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/).
-
-At the end of this exercise you should have identical files on both computers and git log should give the same output.
-
-Now think for a while what happened during this exercise. Do you understand all the parts?
+1. Now you'll work independently.
+2. Both of you have to modify _introduce_ function. Modify this function body so that it's different than your partners.
+3. Commit your changes. Try to sync your changes. What happened? Try to [resolve conflict manually](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/).
+4. At the end of this exercise you should have identical files on both computers and git log should give the same output.
+5. Now think for a while what happened during this exercise. Do you understand all the parts?
 
 ### Section 5 - stashing & popping
 
-This time you'll try a common scenario - pulling before committing.
-
-Both of you have to implement _shout_ function. However, only **person B** has to add, commit and push it. **Person A** does not commit anything now.
-
-**Person A** has to try to pull **person's B** changes.
-
-Was the pull successful? What's git's output? What's [_git stash_](https://git-scm.com/docs/git-stash)?
-
-Try to stash your changes and pull again.
-
-Try to pop your changes from stash.
-
-Make your working directory clean.
-
-What happened during this section? Can you find any real life use case for git stash?
+1. This time you'll try a common scenario - pulling before committing.
+2. Both of you have to implement _shout_ function. However, only **person B** has to add, commit and push it. **Person A** does not commit anything now.
+3. **Person A** has to try to pull **person's B** changes.
+4. Was the pull successful? What's git's output? What's [_git stash_](https://git-scm.com/docs/git-stash)?
+5. Try to stash your changes and pull again.
+6. Try to pop your changes from stash.
+7. Make your working directory clean.
+8. What happened during this section? Can you find any real life use case for git stash?
